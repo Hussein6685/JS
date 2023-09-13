@@ -2151,7 +2151,6 @@ let myP = document.querySelector("p");
 
 
 
-
 /*
   BOM [Browser Object Model]
   Session Storage
@@ -2167,39 +2166,99 @@ let myP = document.querySelector("p");
   - New Tab With Same Url = New Session
 */
 
+// window.localStorage.setItem("color", "red");
+// window.sessionStorage.setItem("color", "blue");
+
+// document.querySelector(".name").onblur = function () {
+//   // console.log(this.value);
+//   window.localStorage.setItem("input-name", this.value);
+// };
+
+
+/*
+  Destructuring
+  " is a JavaScript expression that allows us to extract data from arrays,
+    objects, and maps and set them into new, distinct variables. "
+  - Destructuring Array
+*/
+
+
+// let a = 1;
+// let b = 2;
+// let c = 3;
+// let d = 4;
+
+
+// let myFriends = ["Ahmed", "Sayed", "Ali", "Maysa"];
+
+
+// [a = "A", b, c, d,e = "osama"] = myFriends;
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+// console.log(e);
+
+// // console.log(myFriends[4]);
+
+// let [, y, , z] = myFriends;
+
+// // console.log(x);
+// console.log(y);
+// console.log(z);
 
 
 
 
+/*
+  Destructuring
+  - Destructuring Array Advanced Examples
+*/
+
+// let myFriends = ["Ahmed", "Sayed", "Ali", ["Shady", "Amr", ["Mohamed", "Gamal"]]];
+
+
+// // console.log(myFriends[3][2][1]);
+
+// // let [, , , [a, , [, b]]] = myFriends;
+
+
+//  let [, , , [a, , [, b]]] = myFriends;
+
+// console.log(a);
+// console.log(b);
 
 
 
 
+/*
+  Destructuring
+  - Destructuring Array => Swapping Variables
+*/
+
+// let book = "video";
+// let video = "book";
+
+// // // save book value in stash
+// // let stash = book; //video
+
+// // // change book value
+// // book = video; //book
+
+// // // change video value
+// // video = stash; //video
+
+// [book, video] = [video, book];
+
+// console.log(book);
+// console.log(video);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
+  Destructuring
+  - Destructuring Object
+*/
 
 
 
