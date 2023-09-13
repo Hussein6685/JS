@@ -2260,210 +2260,734 @@ let myP = document.querySelector("p");
   - Destructuring Object
 */
 
+// const user = {
+//   theName: "Osama",
+//   theAge: 33,
+//   theTitle: "Developer",
+//   theCountry: "Egypt",
+// };
+
+// console.log(user.theName);
+// console.log(user.theAge);
+// console.log(user.theTitle);
+// console.log(user.theCountry);
 
+// let theName = user.theName;
+// let theAge = user.theAge;
+// let theTitle = user.theTitle;
+// let theCountry  = user.theCountry;
 
 
 
+// console.log(theName);
+// console.log(theAge);
+// console.log(theTitle);
+// console.log(theCountry);
 
 
+// ({ theName, theAge, theTitle, theCountry } = user);
 
+// const { theName, theAge, theTitle, theCountry } = user;
 
 
+// console.log(theName);
+// console.log(theAge);
+// console.log(theTitle);
+// console.log(theCountry);
 
 
+// /*
+//   Destructuring
+//   - Destructuring Object
+//   --- Naming The Variables
+//   --- Add New Property
+//   --- Nested Object
+//   --- Destructuring The Nested Object Only
+// */
 
+// const user = {
+//   theName: "Osama",
+//   theAge: 39,
+//   theTitle: "Developer",
+//   theCountry: "Egypt",
+//   theColor: "Black",
+//   skills: {
+//     css: 80,
+//     html: 70,
+//   },
+// };
 
+// const {
+//   theName: n,
+//   theAge: a,
+//   theCountry,
+//   theColor: co = "Red",
+//   skills: { css: s, html: h },
+// } = user;
 
 
 
+// console.log(n);
+// console.log(a);
+// console.log(theCountry);
+// console.log(co);
+// console.log(`My HTML Skill Progress Is ${s}`);
+// console.log(`My HTML Skill Progress Is ${h}`);
+// // console.log(`My CSS Skill Progress Is ${css}`);
 
+// const { html: skillOne, css: skillTwo } = user.skills;
 
+// console.log(`My HTML Skill Progress Is ${skillOne}`);
+// console.log(`My HTML Skill Progress Is ${skillTwo}`);
+// // console.log(`My HTML Skill Progress Is ${skill}`);
+// // console.log(`My CSS Skill Progress Is ${skillTwo}`);
 
 
 
+/*
+  Destructuring
+  - Destructuring Function Parameters
+*/
 
 
+// const user = {
+//   theName: "Osama",
+//   theAge: 33,
+//   skills: {
+//     html: 70,
+//     css: 80,
+//   },
+// };
 
+// showDetails(user);
 
+// // function showDetails(obj) {
+// //   console.log(`your name is ${obj.theName}`);
+// //   console.log(`your age is ${obj.theAge}`);
+// //   console.log(`your css skill progress is ${obj.skills.css}`);
+// // }
 
 
+// function showDetails({ theName: n, theAge: a, skills: { css: c } } = user) {
+//   console.log(`your name is ${n}`);
+//   console.log(`your age is ${a}`);
+//   console.log(`your css skill progress is ${c}`);
+// }
 
 
 
 
+/*
+  Destructuring
+  - Destructuring Mixed Content
+*/
 
 
+// const user = {
+//   theName: "Osama",
+//   theAge: 33,
+//   skills: ["HTML", "CSS", "JavaScript"],
+//   addresses: {
+//     egypt: "Cairo",
+//     ksa: "Riyadh",
+//   },
+// };
 
 
+// const { theName: n, theAge: a, skills: [, , three], addresses: { egypt: e } } = user;
 
+// console.log(`your name is ${n} `);
+// console.log(`your age is ${a} `);
+// console.log(`Your Last skills is: ${three} `);
+// console.log(`your live is ${e} `);
 
 
+/*
+  Destructuring
+  - Challenge
+*/
 
+// let chosen = 1;
 
+// let myFriends = [
+//   { title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"] },
+//   { title: "Ahmed", age: 25, available: false, skills: ["Python", "Django"] },
+//   { title: "Sayed", age: 33, available: true, skills: ["PHP", "Laravel"] },
+// ];
 
+/*
+  - Set Data Type
+  Syntax: new Set(Iterable)
+  -- Object To Store Unique Values
+  -- Cannot Access Elements By Index
 
+  Properties:
+  - size
 
+  Methods:
+  - add
+  - delete
+  - clear
+  - has
+*/
 
 
+// let myData = [1, 1, 1, 2, 3, "A"];
+// // let myUniqueData = new Set([1, 1, 1, 2, 3]);
+// // let myUniqueData = new Set(myData);
+// // let myUniqueData = new Set().add(1).add(1).add(1).add(2).add(3);
+// let myUniqueData = new Set();
 
+// myUniqueData.add(1).add(1).add(1);
+// myUniqueData.add(2).add(3).add("A");
 
+// // console.log(`is set has => A ${myUniqueData.has("A")}`);
+// console.log(`is set has => A ${myUniqueData.has("a".toUpperCase())}`);
 
+// // let myData = [1, 1, 1, 2, 3];
+// // let myUniqueData = new set([1, 1, 1, 2, 3]);
 
 
+// console.log(myData);
+// console.log(myUniqueData);
 
+// console.log(myUniqueData.size);
 
+// console.log(myData[0]);
+// console.log(myUniqueData[0]);
 
+// // console.log(myData);
+// // console.log(myUniqueData);
 
+// // myUniqueData.delete(2);
+// // console.log(myUniqueData.delete(200));
+// console.log(myUniqueData.delete(2));
 
+// console.log(myUniqueData);
+// console.log(myUniqueData.size);
 
 
+// // myUniqueData.clear();
 
+// console.log(myUniqueData);
+// console.log(myUniqueData.size);
 
 
 
+/*
+  - Set vs WeakSet
+  "
+    The WeakSet is weak,
+    meaning references to objects in a WeakSet are held weakly.
+    If no other references to an object stored in the WeakSet exist,
+    those objects can be garbage collected.
+  "
+  --
+  Set     => Can Store Any Data Values
+  WeakSet => Collection Of Objects Only
+  --
+  Set     => Have Size Property
+  WeakSet => Does Not Have Size Property
+  --
+  Set     => Have Keys, Values, Entries
+  WeakSet => Does Not Have clear, Keys, Values And Entries
+  --
+  Set     => Can Use forEach
+  WeakSet => Cannot Use forEach
 
+  Usage: Store objects and removes them once they become inaccessible
+*/
 
 
 
+// // Type Of Data
 
+// let mySet = new Set([1, 1, 1, 2, 3, "A", "A"]);
 
+// console.log(mySet);
 
 
 
+// // Size
 
+// console.log(`size of element inside set is: ${mySet.size}`);
+// // console.log
 
 
 
 
+// // Values + Keys [Alias for values]
 
+// let iterator = mySet.keys();
 
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next());
 
 
 
 
+// // forEach
 
+// mySet.forEach((el) => console.log(el));
 
+// console.log("#".repeat(20));
 
 
 
+// // Type Of Data
 
+// let myWs = new WeakSet([{A: 1, B:2}]);
 
+// console.log(myWs);
 
 
 
+// Values + Keys [Alias for values]
 
+// let iter = myWs.keys();
 
+// console.log(iter.next().value);
 
 
 
 
 
+/*
+  - Map Data Type
+  Syntax: new Map(Iterable With Key/Value)
+  -- Map vs Object
+  --
+  ------ Map => Does Not Contain Key By Default
+  ------ Object => Has Default Keys
+  --
+  ------ Map => Key Can Be Anything [Function, Object, Any Primitive Data Types]
+  ------ Object => String Or Symbol
+  --
+  ------ Map => Ordered By Insertion
+  ------ Object => Not 100% Till Now
+  --
+  ------ Map => Get Items By Size
+  ------ Object => Need To Do Manually
+  --
+  ------ Map => Can Be Directly Iterated
+  ------ Object => Not Directly And Need To Use Object.keys() And So On
+  --
+  ------ Map => Better Performance When Add Or Remove Data
+  ------ Object => Low Performance When Comparing To Map
+*/
 
 
+// let myObject = {};
+// let myEmptyObject = Object.create(null);
+// let myMap = new Map();
 
+// console.log(myObject);
+// console.log(myEmptyObject);
+// console.log(myMap);
 
 
+// let myNewObject = {
+//   10: "num",
+//   "10": "string",
+// };
 
+// console.log(myNewObject[10]);
 
 
+// let myNewMap = new Map();
+// myNewMap.set(10, "num");
+// myNewMap.set("10", "string");
+// myNewMap.set(true, "boolean");
+// myNewMap.set({a:1, b:2, }, "Object");
+// myNewMap.set(function doSomething() {}, "function");
 
 
+// console.log(myNewMap.get(10));
+// console.log(myNewMap.get("10"));
 
 
+// console.log(("############################################"));
 
+// console.log(myNewObject);
+// console.log(myNewMap);
 
 
 
+/*
+  - Map Data Type
+  Methods
+  --- set
+  --- get
+  --- delete
+  --- clear
+  --- has
 
+  Properties
+  --- size
+*/
 
 
+// let myMap = new Map([
+//   [10, "num"],
+//   ["name", "string"],
+//   [false, "Boolean"],
+// ]);
 
+// // let myMap = new Map([
+// //   [10, "Num"],
+// //   ["Name", "String"],
+// //   [false, "Boolean"],
+// // ]);
+// // myMap.set(10, "num");
+// // myMap.set("name", "string");
 
 
+// console.log(myMap);
 
 
 
+// console.log(myMap.get(10));
+// console.log(myMap.get("name"));
+// console.log(myMap.get(false));
 
 
+// console.log("#############");
+// console.log(myMap.has(false));
+// console.log("#############");
+// console.log("#############");
+// console.log(myMap.has("name"));
+// console.log("#############");
+// console.log("#############");
 
 
+// console.log(myMap.size);
 
+// console.log(myMap.delete("name"))
 
 
+// console.log(myMap.size);
 
+// myMap.clear();
 
+// console.log(myMap.size);
 
 
 
 
 
+/*
+  - Map vs WeakMap
+  "
+    WeakMap Allows Garbage Collector To Do Its Task But Not Map.
+  "
+  --
+  Map     => Key Can Be Anything
+  WeakMap => Key Can Be Object Only
+  --
+*/
 
 
+// let mapUser = { theName: "osama" };
 
+// let myMap = new Map();
 
+// myMap.set(mapUser, "Object Value");
 
 
+// mapUser = null; //override the reference
 
+// console.log(myMap);
 
 
 
+// console.log("#".repeat(22));
 
+// let wMapUser = { theName: "osama" };
 
 
+// let myWeakMap = new WeakMap();
 
+// myWeakMap.set(wMapUser, "Object Value");
 
 
+// wMapUser = null; //override the reference
 
 
+// console.log(myWeakMap);
 
 
 
+/*
+  Array Methods
+  - Array.from(Iterable, MapFunc, This)
+  --- Variable
+  --- String Numbers
+  --- Set
+  --- Using The Map Function
+  --- Arrow Function
+  --- Shorten The Method + Use arguments
+*/
 
+// console.log(Array.from("osama"));
+// console.log(
+//   Array.from("12345", function (n) {
+//   return +n + +n;
+// })
+// );
 
 
+// console.log(
+//   Array.from("12345", (n) => +n + +n)
+// );
 
+// let myArray = [1, 1, 1, 2, 3, 4];
 
+// // let mySet = new Set(myArray);
 
+// // console.log(Array.from(mySet))
 
 
+// // console.log([...new Set(myArray)]); //gutura
 
 
+// function af() {
+//   return Array.from(arguments);
+// }
 
+// console.log(af("osama", "ahmed", "sayed", 1,2,3,4))
 
 
 
 
+/*
+  Array Methods
+  - Array.copyWithin(Target, Start => Optional, End => Optional)
+  "Copy Part Of An Array To Another Location in The Same Array"
+  -- Any Negative Value Will Count From The End
+  -- Target
+  ---- Index To Copy Part To
+  ---- If At Or Greater Than Array Length Nothing Will Be Copied
+  -- Start
+  ---- Index To Start Copying From
+  ---- If Ommited = Start From Index 0
+  -- End
+  ---- Index To End Copying From
+  ---- Not Including End
+  ---- If Ommited = Reach The End
+*/
 
 
 
+// let myArray = [10, 20, 30, 40, 50, "A", "B"];
 
+// // / 10, 20, 30, 40, 50, "A", "B"
+// // myArray.copyWithin(3); //(7) [10, 20, 30, 10, 20, 30, 40]
 
+// // myArray.copyWithin(4, 6);
 
 
+// // myArray.copyWithin(4,-1);
 
 
+// // myArray.copyWithin(1, -2);
 
+// myArray.copyWithin(1,-2,-1);
 
 
 
+// console.log(myArray);
 
 
 
 
+/*
+  Array Methods
+  - Array.some(CallbackFunc(Element, Index, Array), This Argument)
+  --- CallbackFunc => Function To Run On Every Element On The Given Array
+  ------ Element => The Current Element To Process
+  ------ Index => Index Of Current Element
+  ------ Array => The Current Array Working With
+  --- This Argument => Value To Use As This When Executing CallbackFunc
+  --
+  Using
+  - Check if Element Exists In Array
+  - Check If Number In Range
+*/
 
 
+// let nums = [1, 2, 3, 4, 5, 6, 7,8,9,10];
 
+// let myNumbers =11;
 
+// // let check = nums.some(function (e) {
+// //   console.log("Test");
+// //   return e > 5;
+// // });
 
+// let check = nums.some(function (e) {
+//   return e > this;
+// }, myNumbers );
 
+// // console.log(check);
 
 
+// // let check = nums.some((e) => e > 5);
 
+// console.log(check);
 
 
+// function checkValues(arr, val) {
+//   return arr.some(function (e) {
+//     return e === val;
+//   });
+// };
 
+// console.log(checkValues(nums, 20));
+// console.log(checkValues(nums, 5));
 
+// let renge = {
+//   min: 10,
+//   max: 20,
+// };
 
+// let checkNumberInRange = nums.some(function (e) {
+//   // console.log(this.min);
+//   // console.log(this.max);
+//   return e >= this.min && e <= this.max;
+// },renge)
+
+
+// console.log(checkNumberInRange);
+
+
+
+
+
+
+
+/*
+  Array Methods
+  - Array.every(CallbackFunc(Element, Index, Array), This Argument)
+  --- CallbackFunc => Function To Run On Every Element On The Given Array
+  ------ Element => The Current Element To Process
+  ------ Index => Index Of Current Element
+  ------ Array => The Current Array Working With
+  --- This Argument => Value To Use As This When Executing CallbackFunc
+  --
+*/
+
+
+// const locations = {
+//   20: "Place 1",
+//   30: "Place 2",
+//   50: "Place 3",
+//   40: "Place 4",
+// };
+
+// let mainLocation = 15;
+
+
+// let locationsArray = Object.keys(locations);
+
+// console.log(locationsArray);
+
+// let locationArrayNumbers = locationsArray.map((n) => +n);
+
+// console.log(locationArrayNumbers);
+
+// let check = locationArrayNumbers.every(function (e) {
+//   return e > this;
+// }, mainLocation);
+
+// console.log(check);
+
+
+
+
+/*
+  Spread Operator => ...Iterable
+  "Allow Iterable To Expand In Place"
+*/
+
+
+// Spread With String => Expand String
+
+// console.log("osama");
+// console.log(..."osama");
+// console.log([..."osama"]);
+
+
+// // Concatenate Arrays
+
+// let myArray1 = [1, 2, 3];
+// let myArray2 = [4,5, 6];
+
+
+// let allArrays = [...myArray1, ...myArray2]
+
+// console.log(allArrays);
+
+// // Copy Array
+
+// let copiedArray = [...myArray1];
+// console.log(copiedArray);
+
+// // Push Inside Array
+// let allFriends = ["osama", "ahmed", "sayed"];
+// let thisYearFriends = ["sameh", "mahmoud"]
+
+// allFriends.push(...thisYearFriends);
+
+// console.log(allFriends);
+
+// // Use With Math Object
+
+// let myNums = [10, 20, -100, 100, 1000, 500];
+// console.log(Math.max(...myNums));
+
+
+// // Spread With Objects => Merge Objects
+
+// let objectOne = {
+//   a: 1,
+//   b: 2,
+// };
+
+// let objectTwo = {
+//   c: 3,
+//   d: 4,
+// };
+
+// console.log({ ...objectOne, ...objectTwo, e: 5 });
+// console.log({ ...objectOne && objectTwo});
+
+
+
+
+
+/*
+  Map And Set + What You Learn => Challenge
+  Requirements
+  - You Cant Use Numbers Or True Or False
+  - Don't Use Array Indexes
+  - You Cant Use Loop
+  - You Cant Use Any Higher Order Function
+  - Only One Line Solution Inside Console
+  - If You Use Length => Then Only Time Only
+  Hints
+  - You Can Use * Operator Only In Calculation
+  - Set
+  - Spread Operator
+  - Math Object Methods
+*/
+
+let n1 = [10, 30, 10, 20];
+let n2 = [30, 20, 10];
+
+console.log("Your Solution Here"); // 210
 
 
 
