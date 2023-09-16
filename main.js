@@ -1736,7 +1736,7 @@
 */
 
 
-let myP = document.querySelector("p");
+// let myP = document.querySelector("p");
 
 // myP.onclick = function () {
 //     console.log("Message From onClick");
@@ -3322,102 +3322,361 @@ let myP = document.querySelector("p");
 
 
 
+/*
+  Constructor Function
+*/
+
+// function User(id, username, salary) {
+//   this.i = id;
+//   this.u = username;
+//   this.s = salary + 1000;
+// }
+// let userOne = new User(100, "elzero", 5000);
+// let userTwo = new User(101, "hassan", 6000);
+// let userThree = new User(102, "sayed", 7000);
+// // let userOne = new UserActivation(100, "elzero", 5000);
+
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.s);
+// console.log("#".repeat(22));
+// console.log(userTwo.i);
+// console.log(userTwo.u);
+// console.log(userTwo.s);
 
+// console.log("#".repeat(22));
+// console.log(userThree.i);
+// console.log(userThree.u);
+// console.log(userThree.s);
+
+// console.log("#".repeat(22));
+
+// const userOne = {
+//   id: 100,
+//   username: "Elzero",
+//   salary: 5000,
+// };
 
+// const userTwo = {
+//   id: 101,
+//   username: "Hassan",
+//   salary: 6000,
+// };
 
+// const userThree = {
+//   id: 102,
+//   username: "Sayed",
+//   salary: 7000,
+// };
 
 
 
 
+/*
+  Constructor Function
+  - New Syntax
+*/
 
+// class User {
+//   constructor(id, username, salary) {
+//     this.i = id;
+//     this.u = username;
+//     this.s = salary + 1000;
+//   }
+// }
 
+// let userOne = new User(100, "Elzero", 5000);
 
+// console.log("#".repeat(22));
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.s);
+//  console.log("#".repeat(22));
 
+//  console.log(userOne instanceof User);
+//  console.log(userOne.constructor === User);
 
 
 
+/*
+  Constructor Function
+  - Deal With Properties And Methods
+*/
 
 
 
+// class User {
+//   constructor(id, username, salary) {
+//     // properties
+//     this.i = id;
+//     this.u = username || "Unknown";
+//     this.s = salary < 6000 ? salary + 500 : salary;
+//     this.msg = function () {
+//       return `Hello ${this.u} Your Salary Is ${this.s}`;
+//     }
+//   }
+//   // methods
+//   writeMsg() {
+//           return `Hello ${this.u} Your Salary Is ${this.s}`;
 
+//   }
+// }
 
+// let userOne = new User(100, "Elzero", 5000);
+// let userTwo = new User(101, "", 6000);
 
 
 
+// console.log(userOne.u);
+// console.log(userOne.s);
+// console.log(userOne.msg());
+// console.log(userOne.writeMsg());
 
 
+// console.log(userTwo.u);
+// console.log(userTwo.s);
+// console.log(userTwo.msg);
+// console.log(userTwo.writeMsg);
 
 
 
+// class User {
+//   constructor(id, username, salary) {
+//     this.i = id;
+//     this.u = username;
+//     this.s = salary;
+//   }
+//   updateName(newName) {
+//     this.u = newName
+//   }
+// }
 
+// let userOne = new User(100, "Elzero", 5000);
 
 
+// console.log(userOne.u);
+// userOne.updateName("osama");
+// console.log(userOne.u);
 
 
+// let strOne = "elzero";
+// let strTwo = new String("elzero");
 
+// console.log(typeof strOne);
+// console.log(typeof strTwo);
 
 
 
+// console.log(strOne instanceof String);
+// console.log(strTwo instanceof String);
 
 
+// console.log(strOne.constructor === String);
+// console.log(strTwo.constructor === String);
 
 
 
 
 
 
+/*
+  Class
+  - Static Properties And Methods
+*/
 
 
+// class User {
+//   // static property
+//   static count = 0;
 
+//   constructor(id, username, salary) {
+//     this.i = id;
+//     this.u = username;
+//     this.s = salary;
+//     User.count++;
+//   }
 
+//   // static Methods
+//   static sayHello() {
+//     return `Hello From Class`;
+//   }
+//   static countMembers() {
+//     return `Hello From Class`;
+// }
+//   static countMembers() {
+//     return `${this.count} Members Created`;
+// }
+// }
 
+// let userOne = new User(100, "Elzero", 5000);
+// let userTwo = new User(101, "Ahmed", 5000);
+// let userThree = new User(103, "sayed", 5000);
 
 
 
+// console.log(userOne.u);
+// console.log(userTwo.u);
+// console.log(userTwo.count);
+// console.log(User.count);
+// console.log(User.sayHello());
+// console.log(User.countMembers());
 
 
 
+/*
+  Class
+  - Inheritance
+*/
 
+// // Parent Class
+// class User {
+//   constructor(id, username, email) {
+//     this.i = id;
+//     this.u = username;
+//     this.e = email;
+//   }
+//   sayHello() {
+//     return `Hello ${this.u}`;
+//   }
+// }
+// // derived Class
+// class Admin extends User {
+//   constructor(id, username, permissions) {
+//     super(id, username);
+//     this.p = permissions;
 
+//   }
+// }
 
+// class Superman extends Admin {
+//   constructor(id, username, permissions, ability) {
+//     super(id, username, permissions);
+//     this.a = ability;
+//   }
+// }
+// let userOne = new User(100, "Elzero", "nn@n.net");
+// let adminOne = new Admin(101, "mahmoud", 1);
+// // let adminOne = new Admin(110, "Mahmoud", 1);
 
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.e);
+// console.log(userOne.sayHello());
+// console.log("####");
 
+// console.log(adminOne.i);
+// console.log(adminOne.u);
+// console.log(adminOne.p);
+// // console.log(adminOne.e);
+// console.log(adminOne.sayHello());
 
 
 
 
 
+/*
+  Encapsulation
+  - Class Fields Are Public By Default
+  - Guards The Data Against Illegal Access.
+  - Helps To Achieve The Target Without Revealing Its Complex Details.
+  - Will Reduce Human Errors.
+  - Make The App More Flexible And Manageable.
+  - Simplifies The App.
+*/
 
 
+// class User {
+//   // Private Property
+//   #e;
+//   constructor(id, username, eSalary) {
+//     this.i = id;
+//     this.u = username;
+//     this.#e = eSalary;
+//   }
+//   getSalary() {
+//     return parseInt(this.#e);
+//   }
+// }
 
 
+// let userOne = new User(100, "Elzero", "5000 Gneh");
 
+// console.log(userOne.u);
+// // console.log(userOne.#e);
+// // console.log(userOne.e * 0.3);
+// console.log(userOne.getSalary() * 0.3);
 
 
 
 
+/*
+  Prototype
+  - Introduction
+  - Prototypes are the mechanism by which JavaScript objects
+    inherit features from one another.
+// */
 
+// class User {
+//   constructor(id, username) {
+//     this.i = id;
+//     this.u = username;
+//   }
+//   sayHello() {
+//     return `Hello ${this.u}`;
+//   }
+// }
 
+// let userOne = new User(100, "Elzero");
+// console.log(userOne.u);
 
 
+// console.log(User.prototype);
 
 
+// let strOne = "elzero";
 
 
+// console.log(String.prototype);
 
 
 
 
 
 
+/*
+  Prototype
+  - Add To Prototype Chain
+  - Extend Built In Constructors Features
+*/
 
+// class User {
+//   constructor(id, username) {
+//     this.i = id;
+//     this.u = username;
+//   }
+//   sayHello() {
+//     return `Hello ${this.u}`;
+//   }
+// }
 
+// let userOne = new User(100, "Elzero");
+// console.log(userOne.u);
+// console.log(User.prototype);
+// console.log(userOne);
 
 
+// User.prototype.sayWelcome = function () {
+//   return `Welcome %{this.u}`;
+// };
 
 
+// Object.prototype.love = "elzero web school";
 
+// String.prototype.addDotBeforeAndAfter = function (val) {
+//   return `.${this}.`;
+// };
 
+// let myString = "elzero";
 
 
 
@@ -3425,57 +3684,301 @@ let myP = document.querySelector("p");
 
 
 
+/*
+  Object Meta Data And Descriptor
+  - writable
+  - enumerable
+  - configurable [Cannot Delete Or Reconfigure]
+*/
 
+// const myObject = {
+//   a: 1,
+//   b: 2,
+// };
 
+// Object.defineProperty(myObject, "c", {
+//   Writable: false,
+//   enumerable: true ,
+//   configurable: true,
+//   value: 3,
 
+// });
 
 
+// Object.defineProperty(myObject, "c", {
+//   Writable: false,
+//   enumerable: true ,
+//   configurable: false,
+//   value: 222222,
 
+// });
 
+// myObject.c = 100;
+// console.log(delete myObject.c);
 
+// for (let prop in myObject) {
+//   console.log(prop, myObject[prop]);
+// }
 
 
+// console.log(myObject);
 
 
 
+/*
+  Object Meta Data And Descriptor
+  - Define Multiple Properties
+  - Check Descriptors
+*/
 
+// const myObject = {
+//   a: 1,
+//   b: 2,
+// };
 
+// Object.defineProperties(myObject, {
+//   c: {
+//     configurable: true,
+//     value: 3,
+//   },
+//   d: {
+//     configurable: true,
+//     value: 4,
+//   },
+//   e: {
+//     configurable: true,
+//     value: 5,
+//   },
+// });
 
+// console.log(myObject);
 
+// console.log(Object.getOwnPropertyDescriptor(myObject, "d"));
+// console.log(Object.getOwnPropertyDescriptors(myObject));
 
 
 
 
+/*
+  Date And Time
+  - Date Constructor
 
+  Static Methods
+  - Date.now()
 
+  - To Track Time You Need Starting Point
+  - Epoch Time Or Unix Time In Computer Science Is The Number of Seconds Since January 1, 1970.
+  - Why 1970 [829 Days To 136 Years]
 
+  Search For
+  - Year 2038 Problem in Computer Science.
+*/
 
+// let dateNow = new Date();
 
+// console.log(dateNow);
 
 
+// console.log(Date.now()); // 1000 = 1
 
+// let Seconds = Date.now() / 1000;
+// console.log(`Seconds ${Seconds}`);
 
+// let minutes = Seconds / 60; //60
+// console.log(`minutes ${minutes}`);
 
 
+// let hours = minutes  / 60; //60
+// console.log(`hours ${hours}`);
 
 
+// let days = hours  / 24; //60
+// console.log(`days ${days}`);
 
 
+// let years = days  / 365; //60
+// console.log(`years ${years}`);
 
 
 
 
+/*
+  Date And Time
+  - getTime() => Number Of Milliseconds
+  - getDate() => Day Of The Month
+  - getFullYear()
+  - getMonth() => Zero Based
+  - getDay() => Day Of The Week
+  - getHours()
+  - getMinutes()
+  - getSeconds()
+*/
 
+// let dateNow = new Date();
+// let birthday = new Date("Jan 9 , 3");
+// let dateDiff =  dateNow - birthday;
 
+// console.log(dateDiff);
+// console.log(dateDiff / 1000 /60 /60 /24 / 365);
 
+// console.log(dateNow);
+// console.log(dateNow.getTime());
+// console.log(dateNow.getDate());
+// console.log(dateNow.getFullYear());
+// console.log(dateNow.getMonth());
+// console.log(dateNow.getDay());
+// console.log(dateNow.getHours());
+// console.log(dateNow.getMinutes());
+// console.log(dateNow.getSeconds());
 
 
+/*
+  Date And Time
+  - setTime(Milliseconds)
+  - setDate() => Day Of The Month [Negative And Positive]
+  - setFullYear(year, month => Optional [0-11], day => Optional [1-31])
+  - setMonth(Month [0-11], Day => Optional [1-31]) [Negative And Positive]
+  - setHours(Hours [0-23], Minutes => Optional [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+  - setMinutes(Minutes [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+  - setSeconds(Seconds => [0-59], MS => Optional [0-999])
+*/
 
+// let dateNow = new Date();
+// console.log(dateNow);
 
+// // console.log("#".repeat(66));
+// console.log("#".repeat(66));
 
 
+// // dateNow.setTime(0);
+// // console.log(dateNow);
+// // console.log("#".repeat(66));
 
+// // dateNow.setTime(10000);
+// // console.log(dateNow);
+// // console.log("#".repeat(66));
 
+
+// // dateNow.setDate(38);
+// // console.log(dateNow);
+// // console.log("#".repeat(66));
+
+// // dateNow.setFullYear(2020,13);
+// // console.log(dateNow);
+// // console.log("#".repeat(66));
+
+
+// dateNow.setMonth(8);
+// console.log(dateNow);
+// console.log("#".repeat(66));
+
+
+// dateNow.setMonth(8);
+// console.log(dateNow);
+// console.log("#".repeat(66));
+
+
+
+
+
+
+
+
+
+/*
+  Date And Time
+
+  new Date(timestamp)
+  new Date(Date String)
+  new Date(Numeric Values)
+
+  Format
+  - "Oct 25 1982"
+  - "10/25/1982"
+  - "1982-10-25" => ISO International Standard
+  - "1982 10"
+  - "1982"
+  - "82"
+  - 1982, 9, 25, 2, 10, 0
+  - 1982, 9, 25
+  - "1982-10-25T06:10:00Z"
+
+  Date.parse("String") // Read Date From A String
+  */
+
+// console.log(Date.parse("Jan 9 3"));
+// console.log("#".repeat(66));
+
+// let date1 = new Date(0);
+// console.log(date1);
+// console.log("#".repeat(66));
+
+// let date2 = new Date(1042059600000);
+// console.log(date2);
+// console.log("#".repeat(66));
+
+// let date3 = new Date("01 09 2003");
+// console.log(date3);
+// console.log("#".repeat(66));
+
+// let date4 = new Date("2003 01 09");
+// console.log(date4);
+// console.log("#".repeat(66));
+
+// let date5 = new Date("2003 01");
+// console.log(date5);
+// console.log("#".repeat(66));
+
+// let date6 = new Date("3");
+// console.log(date6);
+// console.log("#".repeat(66));
+
+// let date7 = new Date(2003, 1, 9, 2,10, 0);
+// console.log(date7);
+// console.log("#".repeat(66));
+
+// let date8 = new Date(2003, 1, 9);
+// console.log(date8);
+// console.log("#".repeat(66));
+
+// let date9 = new Date("2003-01-09T06:10:00Z");
+// console.log(date9);
+// console.log("#".repeat(66));
+
+
+
+
+
+
+// console.log("#".repeat(66));
+
+
+
+/*
+  Date And Time
+  - Track Operations Time
+
+  Search
+  - performance.now()
+  - performance.mark()
+*/
+
+
+// start time
+let start = new Date();
+
+// operation
+for (let i = 0; i < 100000; i++) {
+  document.write(`<div>${i}</div>`);
+
+}
+// time end
+let end = new Date();
+
+// operation duration
+let duration = end - start;
+
+console.log(duration);
 
 
 
