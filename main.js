@@ -3955,93 +3955,976 @@
 
 
 /*
-  Date And Time
+Date And Time
   - Track Operations Time
 
   Search
   - performance.now()
   - performance.mark()
+  */
+
+
+//  // start time
+// let start = new Date();
+
+// // operation
+// for (let i = 0; i < 100000; i++) {
+//   // document.write(`<div>${i}</div>`);
+//   let div = document.createElement("div");
+//   div.appendChild(document.createTextNode(i));
+//   document.body.appendChild(div);
+
+// }
+// // time end
+// let end = new Date();
+
+// // operation duration
+// let duration = end - start;
+
+// console.log(duration);
+
+
+
+
+
+// console.log("#".repeat(5));
+
+
+
+
+/*
+  Generators
+  - Generator Function Run Its Code When Required.
+  - Generator Function Return Special Object [Generator Object]
+  - Generators Are Iterable
 */
 
 
-// start time
-let start = new Date();
+// function* generateNumbers() {
 
-// operation
-for (let i = 0; i < 100000; i++) {
-  document.write(`<div>${i}</div>`);
+//   yield 1;
+//   // alert("Hello After Yield 1");
+//   console.log("Hello After Yield 1");
+//   yield 2;
+//   yield 3;
+//   yield 4;
+// }
 
-}
-// time end
-let end = new Date();
+// let generator = generateNumbers();
 
-// operation duration
-let duration = end - start;
+// console.log(typeof generator);
+// console.log(generator);
 
-console.log(duration);
 
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
 
 
 
 
+// for (let value of generator) {
+//   console.log(value);
+// }
 
 
 
+/*
+  Generators
+  - Delegate Generator
+*/
 
+// function* generateNums() {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
 
+// function* generateLetters() {
+//   yield "A";
+//   yield "B";
+//   yield "C";
+// }
 
+// function* generateAll() {
+//   yield* generateNums();
+//   yield* generateLetters();
+//   yield* [4, 5, 6];
+// }
 
+// let generator = generateAll();
+// // let generator = generateAll();
 
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.return("bay bay"));
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
 
 
 
 
 
 
+/*
+  Generators
+  - Generate Infinite Numbers
+  - Use Return Inside Generators
+*/
 
+// function* generateNumbers() {
+//   // yield 1;
+//   // yield 2;
+//   // return "bay bay";
+//   // yield 3;
+//   // yield 4;
 
+//   let index = 0;
 
+//   while (true) {
+//     yield index++;
+//   }
+// }
 
+// let generator = generateNumbers();
 
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
 
 
 
 
+/*
+  Modules
+  - Import And Export
+*/
+// let a = 10;
+// let arr = [1, 2, 3, 4];
 
+// function saySomething() {
+//   return `Something`;
+// }
 
 
 
+// export { a, arr, saySomething };
 
 
 
 
+/*
+  Modules
+  - Import And Export
+*/
 
+// let a = 10;
+// let arr = [1, 2, 3, 4];
 
+// function saySomething() {
+//   return `Something`;
+// }
 
+// export { a as myNumber, arr, saySomething };
 
+// export default function() {
+//   return `Hello`;
+// }
 
 
+/*
+  What Is JSON ?
+  - JavaScript Object Notation
+  - Format For Sharing Data Between Server And Client
+  - JSON Derived From JavaScript
+  - Alternative To XML
+  - File Extension Is .json
 
+  Why JSON ?
+  - Easy To Use And Read
+  - Used By Most Programming Languages And Its Frameworks
+  - You Can Convert JSON Object To JS Object And Vice Versa
 
+  JSON vs XML
+  ===================================================
+  = Text Based Format      = Markup Language        =
+  = Lightweight            = Heavier                =
+  = Does Not Use Tags      = Using Tags             =
+  = Shorter                = Not Short              =
+  = Can Use Arrays         = Cannot Use Arrays      =
+  = Not Support Comments   = Support Comments       =
+  ===================================================
+*/
 
+// الرجوع لهذا الدرس لكتابة الرمز  حلقه رقم 169
 
 
 
 
 
+/*
+  JSON Syntax
+  - Data Added Inside Curly Braces {  }
+  - Data Added With Key : Value
+  - Key Should Be String Wrapped In Double Quotes
+  - Data Separated By Comma
+  - Square Brackets [] For Arrays
+  - Curly Braces {} For Objects
 
+  Available Data Types
+  - String
+  - Number
+  - Object
+  - Array
+  - Boolean Values
+  - null
+*/
 
 
 
 
 
+/*
+  JSON
+  - API Overview
+  - Tools To Test API
+  - Preview Github API
+*/
 
 
 
+/*
+  JSON
+  - JSON.parse => Convert Text Data To JS Object
+  - JSON.stringify => Convert JS Object To JSON
+*/
 
+// // Get From Server
+// const myJsonObjectFromServer = '{"Username": "Osama", "Age": 33 }';
+// console.log(typeof myJsonObjectFromServer);
+// console.log(myJsonObjectFromServer);
 
 
+// const myJsonObject = JSON.parse(myJsonObjectFromServer);
+// console.log(typeof myJsonObject);
+// console.log(myJsonObject);
 
+// myJsonObject["Username"] = "elzro"
+// myJsonObject["Age"] = "30"
+// const myJsonObjectToServer = JSON.stringify(myJsonObject);
+
+// console.log(typeof myJsonObjectToServer);
+// console.log(myJsonObjectToServer);
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+  To Understand Ajax, Fetch, Promises
+
+  Asynchronous vs Synchronous Programming
+  - Meaning
+
+  Synchronous
+  - Operations Runs in Sequence
+  - Each Operation Must Wait For The Previous One To Complete
+  - Story From Real Life
+
+  Asynchronous
+  - Operations Runs In Parallel
+  - This Means That An Operation Can Occur while Another One Is Still Being Processed
+  - Story From Real Life
+
+  - Facebook As Example
+  - Simulation
+
+  Search
+  - JavaScript Is A Single-Threaded
+  - Multi Threaded Languages
+*/
+
+// Synchronous
+
+// console.log("1");
+// console.log("2");
+// window.alert("Operation");
+// console.log("3");
+
+// Asynchronous
+// console.log("1");
+// console.log("2");
+// setTimeout(() => console.log("Operation"), 3000);
+// console.log("3");
+
+
+
+/*
+  To Understand Ajax, Fetch, Promises
+
+  Call Stack || Stack Trace
+  -- JavaScript Engine Uses A Call Stack To Manage Execution Contexts
+  -- Mechanism To Make The Interpreter Track Your Calls
+  -- When Function Called It Added To The Stack
+  -- When Function Executed It Removed From The Stack
+  -- After Function Is Finished Executing The Interpreter Continue From The Last Point
+  -- Work Using LIFO Principle => Last In First Out
+  -- Code Execution Is Synchronous.
+  -- Call Stack Detect Web API Methods And Leave It To The Browser To Handle It
+
+  Web API
+  -- Methods Available From The Environment => Browser
+*/
+
+// setTimeout(() => {
+//   console.log("web API");
+// }, 0);
+
+// function one() {
+//   console.log("One");
+// }
+// function two() {
+//   one();
+//   console.log("Two");
+// }
+// function three() {
+//   two();
+//   console.log("Three");
+// }
+
+// three();
+// ************************************************
+// console.log("One");
+
+
+// ************************************************
+// function one() {
+//   console.log("One");
+// }
+
+
+// ************************************************
+// function two() {
+//   one();
+//   console.log("Two");
+// }
+
+
+
+
+// ************************************************
+// function three() {
+//   two();
+//   console.log("Three");
+// }
+// ************************************************
+
+// setTimeout(() => {
+//   console.log("web API");
+// }, 0);
+
+// console.log("##################")
+//   console.log("One");
+//   console.log("Two");
+//   console.log("Three");
+
+
+
+
+
+
+/*
+  To Understand Ajax, Fetch, Promises
+
+  Event Loop + Callback Queue
+
+  Story
+  - JavaScript Is A Single Threaded Language "All Operations Executed in Single Thread"
+  - Call Stack Track All Calls
+  - Every Function Is Done Its Poped Out
+  - When You Call Asynchronous Function It Sent To Browser API
+  - Asynchronous Function Like Settimeout Start Its Own Thread
+  - Browser API Act As A Second Thread
+  - API Finish Waiting And Send Back The Function For Processing
+  - Browser API Add The Callback To Callback Queue
+  - Event Loop Wait For Call Stack To Be Empty
+  - Event Loop Get Callback From Callback Queue And Add It To Call Stack
+  - Callback Queue Follow FIFO "First In First Out" Rule
+*/
+
+// console.log("One");
+// setTimeout(() => {
+//   console.log("Three");
+// }, 0);
+
+// setTimeout(() => {
+//   console.log("Four");
+// },0);
+// console.log("Two");
+// setTimeout(() => {
+//   console.log(myVar);
+// },0);
+// // console.log(myVar);
+
+// let myVar = 100;
+// myVar += 100;
+
+
+
+/*
+  AJAX
+  - Asynchronous JavaScript And XML
+  - Approach To Use Many Technologies Together [HTML, CSS, Js, DOM]
+  - It Use "XMLHttpRequest" Object To Interact With The Server
+  - You Can Fetch Data Or Send Data Without Page Refresh
+  - Examples
+  --- Youtube Studio
+  --- Google Drive
+  --- Upload Article Photo
+  --- Form Check Name
+
+  Test new XMLHttpRequest();
+  Request And Response
+  Status Code
+*/
+
+// let req = new XMLHttpRequest();
+// console.log(req);
+
+
+
+
+
+
+
+
+/*
+  Ajax
+  - Ready State => Status Of The Request
+  [0] Request Not Initialized
+  [1] Server Connection Established
+  [2] Request Received
+  [3] Processing Request
+  [4] Request Is Finished And Response Is Ready
+  - Status
+  [200] Response Is Successful
+  [404] Not Found
+*/
+
+// let myRequest = new XMLHttpRequest();
+// myRequest.open("GET","https://api.github.com/users/elzerowebschool/repos");
+// myRequest.send();
+// console.log(myRequest);
+
+
+// myRequest.onreadystatechange = function () {
+//   // console.log(myRequest.readyState);
+//   // console.log(myRequest.status);
+//   if (this.readyState === 4 && this === 200) {
+//     console.log(this.responseText);
+//   }
+// }
+
+
+
+
+
+
+
+/*
+  Ajax
+  Loop On Data
+
+  Search
+  - Cross Origin API [CORS]
+  - API Authentication
+*/
+
+// let myRequest = new XMLHttpRequest();
+// myRequest.open("GET", "https://api.github.com/users/elzerowebschool/repos");
+// myRequest.send();
+// myRequest.onreadystatechange = function () {
+//   if (this.readyState === 4 && this.status === 200) {
+//     // console.log(this.responseText);
+//     let jsData = JSON.parse(this.responseText);
+//     // console.log(jsData);
+//     for (let i = 0; i < jsData; i++) {
+//       let div = document.createElement("div");
+//       let repoName = document.createTextNode(jsData[i].full_name);
+//       div.appendChild(repoName);
+//       document.body.appendChild(div);
+//     }
+//   }
+// };
+
+
+
+
+
+
+
+
+
+
+/*
+  To Understand Ajax, Fetch, Promises
+
+  Pyramid Of Doom || Callback Hell
+
+  - What Is Callback
+  - Callback Hell Example
+
+  What Is Callback
+  - A Function That Is Passed Into Another One As An Argument To Be Executed Later
+  - Function To Handle Photos
+  --- [1] Download Photo From URL
+  --- [2] Resize Photo
+  --- [3] Add Logo To The Photo
+  --- [4] Show The Photo In Website
+*/
+
+
+// function makeItRed(e) {
+//   e.target.style.color = "red";
+// }
+//   let p = document.querySelector(".test");
+//   p.addEventListener("click", makeItRed);
+// function iamAcallback() {
+//   console.log("iam A callback function ")
+// }
+
+// setTimeout(iamAcallback, 2000);
+
+// setTimeout(() => {
+//   console.log("Download Photo From URL");
+//   setTimeout(() => {
+//     console.log("Resize Photo");
+//       setTimeout(() => {
+//         console.log("Add Logo To The Photo");
+//               setTimeout(() => {
+//     console.log(" Show The Photo In Website");
+//   }, 1000);
+//   }, 1000);
+//   }, 1000);
+// },1000);
+
+
+
+
+
+
+
+
+/*
+  Promise Intro And Syntax
+  - Promise In JavaScript Is Like Promise In Real Life
+  - Promise Is Something That Will Happen In The Future
+  - Promise Avoid Callback Hell
+  - Promise Is The Object That Represent The Status Of An Asynchronous Operation And Its Resulting Value
+
+  - Promise Status
+  --- Pending: Initial State
+  --- Fulfilled: Completed Successfully
+  --- Rejected: Failed
+
+  Story
+  - Once A Promise Has Been Called, It Will Start In A Pending State
+  - The Created Promise Will Eventually End In A Resolved State Or In A Rejected State
+  - Calling The Callback Functions (Passed To Then And Catch) Upon Finishing.
+
+  - Then
+  --- Takes 2 Optional Arguments [Callback For Success Or Failure]
+*/
+
+
+// const myPromise = new Promise((resolveFunction, rejectFunction) => {
+//   let connect = false;
+//   if (connect) {
+//     resolveFunction("Connection Established");
+//   } else {
+//     rejectFunction(Error("Connection Faild"))
+
+//   }
+// }).then(
+//   (resolveValue) => console.log(`Good ${resolveValue}`),
+//   (rejectValue) => console.log(`Bad ${rejectValue} `)
+// )
+
+// const myPromise = new Promise((resolveFunction, rejectFunction) => {
+//   let connect = true;
+//   if (connect) {
+//     resolveFunction("Connection Established");
+//   } else {
+//     rejectFunction(Error("Connection Faild"))
+
+//   }
+// });
+
+
+// console.log(myPromise);
+// let resolver = (resolveValue) => console.log(`Good ${resolveValue}`);
+// let rejecter = (rejectValue) => console.log(`Bad ${rejectValue} `);
+
+// myPromise.then(resolver,rejecter )
+
+
+
+
+// myPromise.then(
+//   (resolveValue) => console.log(`Good ${resolveValue}`),
+//   (rejectValue) => console.log(`Bad ${rejectValue} `)
+// );
+
+// myPromise.then(
+//   (resolveValue) => console.log(`Good ${resolveValue}`),
+//   (rejectValue) => console.log(`Bad ${rejectValue} `)
+// );
+
+// myPromise.then(
+//   (resolveValue) => console.log(`Good ${resolveValue}`),
+//   (rejectValue) => console.log(`Bad ${rejectValue} `)
+// );
+
+
+
+
+
+
+/*
+  Promise Training
+
+  We Will Go To The Meeting, Promise Me That We Will Find The 4 Employees
+  .then(We Will Choose Two People)
+  .then(We Will Test Them Then Get One Of Them)
+  .catch(No One Came)
+
+  Then    => Promise Is Successfull Use The Resolved Data
+  Catch   => Promise Is Failed, Catch The Error
+  Finally => Promise Successfull Or Failed Finally Do Something
+*/
+
+// const myPromise = new Promise((resolveFunction, rejectFunction) => {
+//   let employees = [];
+//   if (employees.length === 4) {
+//     resolveFunction(employees);
+//   } else {
+//     rejectFunction(Error("Number Of  Employees Is Not 4"))
+//   }
+// });
+
+// myPromise
+//   .then((resolveValue) => {
+//     resolveValue.length = 2;
+//     return resolveValue;
+//     // console.log(resolveValue);
+//   })
+//   .then(
+//     (resolveValue) => {
+//       resolveValue.length = 1;
+//       return resolveValue;
+//     })
+//   .then(
+//     (resolveValue) => {
+//       console.log(`The Choosen Emplyee Is ${resolveValue}`)
+//     }).catch((rejectedReson) => console.log(rejectedReson)).finally(
+//       console.log("The Operation Is Done")
+//     );
+
+
+  // console.log(`${resolveValue}`),
+// (rejectValue) => console.log(`${rejectValue}`)
+
+
+
+/*
+  Promise And XHR
+*/
+
+// const getDate = (apiLink) => {
+//   return new Promise((resolve, reject) => {
+//     let myRequest = new XMLHttpRequest();
+//     myRequest.onload = function () {
+//       if (this.readyState === 4 && this.status === 200) {
+//         resolve(JSON.parse(this.responseText));
+//       } else {
+//         reject(Error("No Data Found"));
+//       }
+//     };
+
+//     myRequest.open("GET", apiLink);
+//     myRequest.send();
+//   });
+// };
+
+// getDate("https://api.github.com/users/elzerowebschool/repos").then(
+//   (result) => {
+//     result.length = 10;
+//     return result;
+//   }).then((result) => console.log(result[0].name)).catch((rej) => console.log(rej));
+
+// // "https://api.github.com/users/elzerowebschool/repos
+
+
+
+
+/*
+  Fetch API
+  - Return A Representation Of the Entire HTTP Response
+*/
+// fetch("https://api.github.com/users/elzerowebschool/repos").then((result) => {
+//   // console.log(result);
+//   let myData = result.json();
+//   // console.log(myData);
+//   return myData;
+// }).then((myData) => {
+//   myData.length = 10;
+//   return myData;
+// }).then((myData) => {
+//   console.log(myData[0].name);
+
+// });
+
+// const getData = (apiLink) => {
+//   return new Promise((resolve, reject) => {
+//     let myRequest = new XMLHttpRequest();
+//     myRequest.onload = function () {
+//       if (this.readyState === 4 && this.status === 200) {
+//         resolve(JSON.parse(this.responseText));
+//       } else {
+//         reject(Error("No Data Found"));
+//       }
+//     };
+
+//     myRequest.open("GET", apiLink);
+//     myRequest.send();
+//   });
+// };
+
+// getData("https://api.github.com/users/elzerowebschool/repos")
+//   .then((result) => {
+//     result.length = 10;
+//     return result;
+//   })
+//   .then((result) => console.log(result[0].name))
+//   .catch((rej) => console.log(rej));
+
+
+
+
+
+
+
+
+
+/*
+  Promise
+  - All
+  - All Settled
+  - Race
+*/
+
+
+// const myFristPromise = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     res("Iam The Frist Promise");
+//   }, 5000);
+// });
+
+// const mySecondPromise = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     rej("Iam The Second Promise");
+//   }, 1000);
+// });
+// const myThirdPromise = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     res("Iam The Third Promise");
+//   }, 2000);
+// });
+
+// // Promise.all([myFristPromise, mySecondPromise, myThirdPromise]).then(
+// //   (resolvedVaues) => console.log(resolvedVaues),
+// //   (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+// // );
+
+// // Promise.allSettled([myFristPromise, mySecondPromise, myThirdPromise]).then(
+// //   (resolvedVaues) => console.log(resolvedVaues),
+// //   (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+// // );
+
+
+// Promise.race([myFristPromise, mySecondPromise, myThirdPromise]).then(
+//   (resolvedVaues) => console.log(resolvedVaues),
+//   (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+// );
+
+/*
+  Async
+  - Async Before Function Mean This Function Return A Promise
+  - Async And Await Help In Creating Asynchronous Promise Behavior With Cleaner Style
+*/
+
+// function getData() {
+//   return new Promise((res, rej) => {
+//     let users = [];
+//     if (users.length > 0) {
+//       res("Users Found");
+//     } else {
+//       rej("No Users Found ")
+//     }
+//   });
+// }
+// getData().then(
+//   (resolvedValue) => console.log(resolvedValue),
+//   (rejectedValue) => console.log("Rejected " + rejectedValue)
+// );
+
+
+// function getData() {
+//   let users = [""];
+//   if (users.length > 0) {
+//     return Promise.resolve("Users Found")
+//   } else {
+//     return Promise.reject("No Users Found")
+//   }
+// }
+// getData().then(
+//   (resolvedValue) => console.log(resolvedValue),
+//   (rejectedValue) => console.log("Rejected " + rejectedValue)
+//   );
+
+
+
+//  async function getData() {
+//     let users = [];
+//     if (users.length > 0) {
+//       return "Users Found";
+//     } else {
+//       throw new Error("No Users Found");
+//     }
+// }
+// // console.log(getData());
+
+//   getData().then(
+//     (resolvedValue) => console.log(resolvedValue),
+//     (rejectedValue) => console.log("Rejected " + rejectedValue)
+//     );
+
+
+
+  //   return new Promise((res, rej) => {
+  //     let users = [];
+  //     if (users.length > 0) {
+  //       res("Users Found");
+  //     } else {
+  //       rej("No Users Found ")
+  //     }
+  //   });
+  // }
+
+
+
+
+/*
+  Await
+  - Await Works Only Inside Asnyc Functions
+  - Await Make JavaScript Wait For The Promise Result
+  - Await Is More Elegant Syntax Of Getting Promise Result
+*/
+
+
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // resolve("Iam The Good Promise");
+//     reject(Error("Iam The Bad Promise"));
+//   }, 1000);
+// });
+
+// async function readData() {
+//   console.log("Before Promise");
+//   // myPromise.then((resolvedValue) => console.log(resolvedValue))
+//   console.log(await myPromise.catch((error) => error));
+//   console.log(await myPromise.catch((error) => error));
+//   console.log("After Promise");
+// }
+
+
+// readData();
+
+
+
+
+
+
+/*
+  Async & Await With Try, Catch, Finally
+// */
+
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Iam The Good Promise");
+//   }, 1000);
+// });
+
+// // async function readData() {
+// //   console.log("Before Promise");
+
+
+// //   try {
+// //     console.log(await myPromise);
+// //   } catch (reason) {
+// //     console.log(`Reason: ${reason}`);
+// //   } finally {
+// //     console.log("After Promise");
+// //   }
+// // }
+
+// // readData();
+
+// // "https://api.github.com/users/elzerowebschool/repos"
+
+
+// async function fetchData() {
+//   console.log("Before Fetch");
+//   try {
+//     let myData = await fetch("https://api.github.com/users/elzerowebschool/repos");
+//     console.log(await myData.json());
+//   } catch (reason) {
+//     console.log(`Reason: ${reason}`);
+//   } finally {
+//     console.log("After Fetch");
+//   }
+// }
+
+// fetchData();
+
+
+
+/*
+  The End
+  - Other Information => Practice + Tutorials
+  - Problem Solving
+  - Search In Lessons
+  - Advanced Books
+*/
 
 
 
